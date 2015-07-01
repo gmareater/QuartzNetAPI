@@ -45,7 +45,7 @@ namespace Quartz.API.Controllers
             Quartz.Collection.ISet<JobKey> jobKeys = _scheduler.GetJobKeys(GroupMatcher<JobKey>.GroupEquals(SchedulerConstants.DefaultGroup));
             var jobDetail = _scheduler.GetJobDetail(jobKeys.First());
             var triggerKeys = _scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.GroupEquals(SchedulerConstants.DefaultGroup));
-
+             
             return
                 new
             {
